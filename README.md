@@ -1,1 +1,0 @@
-# azinphosmethyl.github.io
