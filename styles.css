@@ -21,7 +21,7 @@ body {
     height: 3vw;
 }
 .top-bar:hover {
-    transition-duration: 500ms;
+    transition-duration: 200ms;
     transition-property: all;
     opacity: 100%;
     background-color: black;
