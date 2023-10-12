@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+    <head>
+        <title>freeCC Survey Form</title>
+        <link rel="stylesheet" href="/Projekty/CERTYFIKAT_PROJEKT_1_CSS.css" />
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    </head>
+    <body>
+      
+        <header class="header">
+          <h1 id="title"><strong>azinphosmethyl Survey Form</strong></h1>
+          <p id="description"><em>Thank you for taking your time to help us improve!</em></p>
+        </header>
+        <div class="site">
+        <form id="survey-form">
+          <strong>To take my survey please enter your :</strong>
+            <fieldset>
+        <label for="name" id="name-label">Name: <input id="name" name="name" type="text" required placeholder="e.g. Michael" /></label>
+        <label for="email" id="email-label">Email: <input id="email" name="email" type="email" required placeholder="e.g. ftp@freeCodeCamp.com" /></label>
+        <label for="age" id="number-label">Age<small>(optional)</small>: <input id="number" name="number" type="number" min="1" max="125" placeholder="1-125" /></label>
+        <label for="gender">Gender:
+          <select id="dropdown" name="gender">
+            <option value="">(optional)</option>
+            <option value="1">Male</option>
+            <option value="2">Female</option>
+            <option value="3">Rather not say</option>
+            <option value="4">Other</option>
+          </select>
+        </label>
+        </fieldset>
+        <fieldset>
+        Have you ever listened to $uicideboy$?
+<label><input id="yes" type="radio" name="g59" value="indoor" checked> Yes</label>
+<label><input id="no" type="radio" name="g59" value="outdoor"> No</label>
+</fieldset>
+<fieldset>
+What Would you change about my survey form?
+<input id="checkbox" type="checkbox" name="change" value="colors"> <label for="checkbox">Colors</label>
+<input id="checkbox" type="checkbox" name="change" value="font"> <label for="checkbox">Font</label>            
+<input id="checkbox" type="checkbox" name="change" value="text-size"> <label for="checkbox">Text size</label>
+<input id="checkbox" type="checkbox" name="change" value="other"> <label for="checkbox" checked >Other</label>
+</fieldset>
+<fieldset>
+Additional comments:
+<textarea id="bio" name="bio" rows="3" cols="30" placeholder="Sigma..."></textarea>
+      </fieldset>
+      <input id="submit" type="submit" value="Submit" />
+        </form>
+        </div>
+    </body>
