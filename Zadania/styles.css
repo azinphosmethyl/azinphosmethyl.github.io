@@ -15,7 +15,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     margin-bottom: 0px;
-    margin-top: 30px;
+    margin-top: 0px;
     padding: 30px;
     max-width: 1024px;
     border-radius: 15px;
@@ -51,9 +51,11 @@ fieldset {
   text-align: center;
   background-color: black;
   padding: 0px;
+  margin-top: -32px;
   position: fixed;
   width: 100vw;
   height: 3vw;
+  left: 0px;
 }
 
 .top-bar u1 {
@@ -61,12 +63,10 @@ fieldset {
   margin: 0;
   padding: 0;
 }
-
 .top-bar u1 a {
   text-decoration: none;
   color: #fff;
 }
-
 .top-bar u1 a li, button, .dropdown {
   font-size: 2.5vw;
   position: relative;
@@ -77,13 +77,11 @@ fieldset {
   width: 15vw;
   transition: all .2s ease-in-out;
 }
-
 .top-bar u1 li:hover {
   color: black;
   background-color: #fff;
   transform:scale(1.25, 1.25);
 }
-
 .top-bar u1 li:hover a {
   text-decoration: none;
   color: black;
