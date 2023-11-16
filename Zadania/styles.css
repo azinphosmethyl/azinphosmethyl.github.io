@@ -46,3 +46,41 @@ fieldset {
     padding: 1rem 0.25rem;
     border-bottom: 3px solid #3b3b4f;
   }
+
+.top-bar {
+  text-align: center;
+  background-color: black;
+  padding: 0px;
+  position: fixed;
+  width: 100vw;
+  height: 3vw;
+}
+
+.top-bar u1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.top-bar u1 a {
+  text-decoration: none;
+  color: #fff;
+}
+.top-bar u1 a li, button, .dropdown {
+  font-size: 2.5vw;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0 0vw;
+  height: 3vw;
+  width: 15vw;
+  transition: all .2s ease-in-out;
+}
+.top-bar u1 li:hover {
+  color: black;
+  background-color: #fff;
+  transform:scale(1.25, 1.25);
+}
+.top-bar u1 li:hover a {
+  text-decoration: none;
+  color: black;
+}
