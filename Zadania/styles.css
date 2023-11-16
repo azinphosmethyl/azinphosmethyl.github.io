@@ -61,10 +61,12 @@ fieldset {
   margin: 0;
   padding: 0;
 }
+
 .top-bar u1 a {
   text-decoration: none;
   color: #fff;
 }
+
 .top-bar u1 a li, button, .dropdown {
   font-size: 2.5vw;
   position: relative;
@@ -75,11 +77,13 @@ fieldset {
   width: 15vw;
   transition: all .2s ease-in-out;
 }
+
 .top-bar u1 li:hover {
   color: black;
   background-color: #fff;
   transform:scale(1.25, 1.25);
 }
+
 .top-bar u1 li:hover a {
   text-decoration: none;
   color: black;
