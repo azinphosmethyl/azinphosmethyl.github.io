@@ -89,10 +89,15 @@ fieldset {
   color: black;
 }
 
-a {
+h5 a {
 color: red;
 text-decoration: none;
 }
+h5 a:hover {
+  color: gray;
+  text-shadow: 0 0 20px white;
+}
+
 
 audio { 
   display: inline-block;
@@ -138,3 +143,20 @@ audio::-webkit-media-controls-mute-button {
   border-radius: 15px;
   box-shadow: 0 0 20px white;
 }
+
+.artistsimgs {
+  width: 30vw;
+  height: auto;
+  border-radius: 50px;
+  border: 1px solid black;
+  box-shadow: 0 0 15px black;
+  transform:scale(0.95, 0.95);
+  transition: all .2s ease-in-out;
+}
+
+.artistsimgs:hover {
+  transform:scale(1.15, 1.15);
+}
+ h6 {
+  color: gray;
+ }
