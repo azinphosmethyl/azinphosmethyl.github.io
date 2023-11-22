@@ -96,6 +96,7 @@ text-decoration: none;
 h5 a:hover {
   color: gray;
   text-shadow: 0 0 20px white;
+  transition: all .15s ease-in-out;
 }
 
 
@@ -142,7 +143,12 @@ audio::-webkit-media-controls-mute-button {
   border: 2px solid white;
   border-radius: 15px;
   box-shadow: 0 0 20px white;
+  transition: all .2s ease-in-out;
 }
+.homeimg:hover {
+  transform:scale(1.05, 1.05);
+  box-shadow: 0 0 75px white;
+ }
 
 .artistsimgs {
   width: 30vw;
@@ -151,12 +157,14 @@ audio::-webkit-media-controls-mute-button {
   border: 1px solid black;
   box-shadow: 0 0 15px black;
   transform:scale(0.95, 0.95);
-  transition: all .2s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 .artistsimgs:hover {
   transform:scale(1.15, 1.15);
+  box-shadow: 0 0 25px white;
 }
  h6 {
   color: gray;
  }
+
