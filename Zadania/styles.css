@@ -144,6 +144,7 @@ audio::-webkit-media-controls-mute-button {
   border-radius: 15px;
   box-shadow: 0 0 20px white;
   transition: all .2s ease-in-out;
+  margin-bottom: 100px;
 }
 .homeimg:hover {
   transform:scale(1.05, 1.05);
