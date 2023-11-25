@@ -3,7 +3,7 @@ body {
   font-family: Tahoma;
   font-size: 1.5rem;
   color: white;
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-attachment: fixed;
   background-position: center;
   background-color: black;
@@ -55,9 +55,10 @@ fieldset {
   margin-top: -32px;
   position: fixed;
   width: 100vw;
-  height: 3vw;
+  height: 6vh;
   left: 0px;
   z-index: 1;
+  max-height: 100px;
 }
 
 .top-bar u1 {
@@ -70,12 +71,12 @@ fieldset {
   color: #fff;
 }
 .top-bar u1 a li, button, .dropdown {
-  font-size: 2.5vw;
+  font-size: 5vh;
   position: relative;
   display: inline-block;
   text-align: center;
   margin: 0 0vw;
-  height: 3vw;
+  height: 6vh;
   width: 15vw;
   transition: all .2s ease-in-out;
 }
@@ -145,6 +146,7 @@ audio::-webkit-media-controls-mute-button {
   box-shadow: 0 0 20px white;
   transition: all .2s ease-in-out;
   margin-bottom: 100px;
+  max-width: 1000px;
 }
 .homeimg:hover {
   transform:scale(1.05, 1.05);
@@ -159,6 +161,7 @@ audio::-webkit-media-controls-mute-button {
   box-shadow: 0 0 15px black;
   transform:scale(0.95, 0.95);
   transition: all .4s ease-in-out;
+  max-width: 512px;
 }
 
 .artistsimgs:hover {
