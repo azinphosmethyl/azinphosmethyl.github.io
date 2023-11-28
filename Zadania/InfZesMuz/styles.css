@@ -70,16 +70,6 @@ fieldset {
   text-decoration: none;
   color: #fff;
 }
-.top-bar u1 a li, button, .dropdown {
-  font-size: 5vh;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-  margin: 0 0vw;
-  height: 6vh;
-  width: 15vw;
-  transition: all .2s ease-in-out;
-}
 .top-bar u1 li:hover {
   color: black;
   background-color: #fff;
