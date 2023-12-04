@@ -17,12 +17,14 @@ body { /* Body of my site */
     height: 5vh;
     margin-top: -21px;
 }
-.topbar u1 {
-    list-style-type: none;
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-  }
-  .topbar u1 a {
-    text-decoration: none;
-  }
+.topbar ul {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+
+}
+.topbar ul li {
+  padding: 0 100px;
+}
