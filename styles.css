@@ -3,7 +3,7 @@
 
 body { /* Body of my site */
     font-family: 'Smooch Sans', sans-serif;
-    background: #330000;
+    background-image: linear-gradient(-75deg,#0A0B0A, #090A09);
     color: #FFFFFF;
     text-align: center;
     padding: 0px;
@@ -36,26 +36,29 @@ body { /* Body of my site */
 .topbar ul a {
   font-size: calc(20px + 1vh);
   text-decoration: none;
-  color: white;
+  color: #FFFFFF;
 }
 .topbar ul li:hover, .active {
   transform:scale(1.25, 1.25);
-  background-color: #555555;
+  background-color: #1A1B1A;
 }
+
 
 .topsite {
   margin: auto;
   border-radius: 9vh;
-  width: 99vw;
-  background-color: grey;
+  max-width: 75vw;
+  width: 100vw;
+  background-color: #3A3B3A;
   padding-top: 5vh;
+  margin-bottom: -15px;
 }
 .site {
   font-family: 'Dhurjati', sans-serif;
   margin: auto;
   border-radius: 9vh;
   width: 95vw;
-  background-color: #AA0000;
+  background-image: linear-gradient(125deg, #470107,#270000);
 }
 
 
@@ -99,7 +102,7 @@ body { /* Body of my site */
   margin: -75px 0 0 -75px;
   border-radius: 50%;
   border: 3px solid transparent;
-  border-top-color: red;
+  border-top-color: FF2E00;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;
   z-index: 99999;
