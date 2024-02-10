@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Smooch+Sans:wght@600&display=swap');
+
+body {
+    font-family: 'Smooch Sans', sans-serif;
+    background: #AAAABB;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    overflow: initial;
+    background-image: url(https://c.wallhere.com/photos/0e/24/1920x1080_px_car_Ford_Mustang-666073.jpg!d);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+ 
+.topbar {
+    background-color: black;
+    position: fixed;
+    width: 100vw;
+    height: 5vh;
+    min-height: 30px;
+}
+.topbar ul {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+
+}
+.topbar ul li {
+  margin-top: -12px;
+  padding: 0 100px;
+  transition: all .1s ease-in-out;
+
+}
+.topbar ul a {
+  font-size: calc(20px + 1vh);
+  text-decoration: none;
+  color: white;
+}
+.topbar ul li:hover, .active {
+  transform:scale(1.25, 1.25);
+  background-color: #0000AA;
+}
+
+.topsite {
+  margin: auto;
+  border-radius: 9vh;
+  width: 99vw;
+  background-color: #0000AA;
+  padding-top: 5vh;
+}
+.site {
+  font-family: 'Dhurjati', sans-serif;
+  margin: auto;
+  border-radius: 5vh;
+  width: 95vw;
+  background-color: #5555FF;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-flex;
+  }
+  
+  .dropdown-content {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    display: none;
+    position: absolute;
+    min-width: 260px;
+    align: center;
+    margin-left: -30px;
+    z-index: 1;
+    background-color: #0000AA;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  tr {
+    font-size: 30px;
+  }
+
+  tr img {
+    max-width: 612px;
+    max-height: auto;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0 0 15px black;
+  }
