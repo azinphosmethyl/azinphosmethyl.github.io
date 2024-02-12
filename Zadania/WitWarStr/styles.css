@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Dhurjati&family=Smooch+Sans:wght@600&display=swap');
-
+*
+{
+  max-width: 98.8vw;
+}
 body {
     font-family: 'Smooch Sans', sans-serif;
     background: #AAAABB;
@@ -13,38 +16,73 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
+    min-height: 100vh;
   }
- 
+@media screen and (min-width: 1200px) {
+  .topbar ul {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+
+  }
+  .topbar ul li {
+    margin-top: -12px;
+    padding: 0 100px;
+    transition: all .1s ease-in-out;
+
+  }
+  .topbar ul a {
+    font-size: calc(20px + 1vh);
+    text-decoration: none;
+    color: white;
+  }
+  .topbar ul li:hover, .active {
+    transform:scale(1.25, 1.25);
+    background-color: #0000AA;
+  }
+  .dropdown-content-site {
+    display: none;
+  }
+  .small-ref {
+    display: none;
+  }
+}
+
 .topbar {
-    background-color: black;
-    position: fixed;
-    width: 100vw;
-    height: 5vh;
-    min-height: 30px;
+  background-color: black;
+  position: fixed;
+  width: 100vw;
+  height: 5vh;
+  min-height: 30px;
 }
-.topbar ul {
-  display: inline-flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  list-style: none;
-  padding: 0;
 
-}
-.topbar ul li {
-  margin-top: -12px;
-  padding: 0 100px;
-  transition: all .1s ease-in-out;
-
-}
-.topbar ul a {
-  font-size: calc(20px + 1vh);
-  text-decoration: none;
-  color: white;
-}
-.topbar ul li:hover, .active {
-  transform:scale(1.25, 1.25);
-  background-color: #0000AA;
+@media screen and (max-width: 1199px) {
+  .topbar ul {
+    display: none;
+  }
+  .topbar ul li {
+    display: none;
+  }
+  .topbar ul a {
+    display: none;
+  }
+  .small-ref {
+    font-size: calc(20px + 1vh);
+    text-decoration: none;
+    color: white;
+    transition: all .1s ease-in-out;
+  }
+  .small-ref:hover {
+    transform:scale(1.25, 1.25);
+    background-color: #0000AA;  
+  }
+  .small-ref a {
+    text-decoration: none;
+    color: white;
+  }
 }
 
 .topsite {
@@ -53,7 +91,14 @@ body {
   width: 99vw;
   background-color: #0000AA;
   padding-top: 5vh;
+  margin-bottom: 15vh;
 }
+
+.topsite a {
+  text-decoration: none;
+  color: white;
+}
+
 .site {
   font-family: 'Dhurjati', sans-serif;
   margin: auto;
@@ -62,36 +107,51 @@ body {
   background-color: #5555FF;
 }
 
+.site a {
+  text-decoration: none;
+  color: white
+}
+
 .dropdown {
     position: relative;
     display: inline-flex;
-  }
+}
   
-  .dropdown-content {
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    display: none;
-    position: absolute;
-    min-width: 260px;
-    align: center;
-    margin-left: -30px;
-    z-index: 1;
-    background-color: #0000AA;
-  }
+.dropdown-content {
+  font-size: 20px;
+  text-decoration: none;
+  color: white;
+  display: none;
+  position: absolute;
+  min-width: 300px;
+  align: center;
+  margin-left: -30px;
+  z-index: 1;
+  background-color: #0000AA;
+  border-radius: 15px;
+}
   
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
+.dropdown:hover .dropdown-content {
+  display: block;
+}
 
-  tr {
-    font-size: 30px;
-  }
+tr {
+  font-size: calc(10px + 2vh);;
+}
 
-  tr img {
-    max-width: 612px;
-    max-height: auto;
-    border-radius: 10px;
-    border: 1px solid black;
-    box-shadow: 0 0 15px black;
-  }
+tr img {
+  max-width: 40vw;
+  max-height: auto;
+  border-radius: 10px;
+  border: 1px solid black;
+  box-shadow: 0 0 15px black;
+}
+
+.downsite {
+  margin-top: 200px;
+  margin-bottom: 0px;
+  height: 20px;
+  background-color: black;
+  bottom: 0;
+  padding: 0;
+}
