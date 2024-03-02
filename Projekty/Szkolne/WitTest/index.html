@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var czlowiek1 = { // Zadanie 1
+            name: "Michal",
+            surname: "Kuszneruk",
+            age: "18",
+            height: undefined
+        }
+
+        document.write(`${czlowiek1.name} </br>`) // Zadanie 2
+
+        document.write(`${czlowiek1.name} ${czlowiek1.surname} <br>`) // Zadanie 3
+
+        czlowiek1.height = 192 // Zadanie 4
+
+        for(const property in czlowiek1) { // Zadanie 5
+            document.write(`${property}: ${czlowiek1[property]} <br>`)
+        }
+
+        delete czlowiek1.height // Zadanie 6
+
+        var czlowiek2 = { age: 9 , name: "eryk" }; var czlowiek3 = { age: 26 , name: "konrad" }; var czlowiek4 = { age: 163 , name: "szmitek" } // Zadanie 7
+        var table = []; table[0] = czlowiek2; table[1] = czlowiek3; table[2] = czlowiek4
+        var srednia = (table[0].age + table[1].age + table[2].age)/3
+        document.write(`Srednia wieku dla wprowadzonych 3 osob to: ${srednia} lat <br>`)
+        
+        if(table[0] == table[1]) { // Zadanie 8       
+            document.write(`${table[0].name} i ${table[1].name} są tacy sami <br>`)
+        } else {
+            document.write(`${table[0].name} i ${table[1].name} nie są tacy sami <br>`)
+        }
+
+        var samochod = { // Zadanie 9
+            marka: "audi",
+            model: "a6c7",
+            rokProdukcji: "2011",
+            silnik: {
+                pojemnosc: "3.0",
+                paliwo: "diesel",
+                moc: "260hp"
+            }
+        }
+
+        samochod.silnik.moc = "300hp" // Zadanie 10
+
+        function Samochod(marka, model) { // Zadanie 11
+            this.marka = marka
+            this.model = model
+        }
+        Samochod.prototype = Object.create(Samochod.prototype)
+        Samochod.prototype.constructor = Samochod
+        var mojSamochod = new Samochod("audi", "a6c7")
+
+        function Ksiazka(autor, tytul, rokWydania, wydawnictwo) { // Zadanie 12
+            this.tytul = tytul
+            this.autor = autor
+            this.rokWydania = rokWydania
+            this.wydawnictwo = wydawnictwo
+        }
+        var mojaKsiazka = new Ksiazka("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin");
+
+        document.write(`Zadanie 13 ma sor w konsoli :) <br>`) // Zadanie 13
+        console.log(mojaKsiazka)
+        
+        function Ebook(tytul, autor, rokWydania, wydawnictwo, format, rozmiarPliku) {  // Zadanie 14
+            Ksiazka.call(this, tytul, autor, rokWydania, wydawnictwo);
+            this.format = format;
+            this.rozmiarPliku = rozmiarPliku;
+        }
+        Ebook.prototype = Object.create(Ksiazka.prototype)
+        Ebook.prototype.constructor = Ebook
+        var mojEbook = new Ebook("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin", "PDF", "5MB")
+        document.write(`Zadanie 14 ma sor w konsoli :)) <br>`)
+        console.log(mojEbook)
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
