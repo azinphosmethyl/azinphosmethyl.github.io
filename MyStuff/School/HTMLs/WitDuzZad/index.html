@@ -73,14 +73,14 @@
             this.rokWydania = rokWydania
             this.wydawnictwo = wydawnictwo
         }
-        var mojaKsiazka = new Ksiazka("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin");
+        var mojaKsiazka = new Ksiazka("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin")
 
         console.log(mojaKsiazka) // Zadanie 13
         
         function Ebook(tytul, autor, rokWydania, wydawnictwo, format, rozmiarPliku) {  // Zadanie 14
-            Ksiazka.call(this, tytul, autor, rokWydania, wydawnictwo);
-            this.format = format;
-            this.rozmiarPliku = rozmiarPliku;
+            Ksiazka.call(this, tytul, autor, rokWydania, wydawnictwo)
+            this.format = format
+            this.rozmiarPliku = rozmiarPliku
         }
         Ebook.prototype = Object.create(Ksiazka.prototype)
         Ebook.prototype.constructor = Ebook
@@ -95,12 +95,12 @@
         }
 
         function kopiujObiekt(obiekt) { // Zadanie 16
-            return {...obiekt};
+            return {...obiekt}
         }
         console.log(kopiujObiekt(mojEbook))
 
         function sprawdzWlasciwosc(obiekt, wlasciwosc) { // Zadanie 17
-            return obiekt.hasOwnProperty(wlasciwosc);
+            return obiekt.hasOwnProperty(wlasciwosc)
         }
         console.log(sprawdzWlasciwosc(mojEbook, "tytul"))
 
@@ -116,8 +116,8 @@
 
         function zmianaKlucza(obiekt, staryKlucz, nowyKlucz) { // Zadanie 19
             if (obiekt.hasOwnProperty(staryKlucz)) {
-                obiekt[nowyKlucz] = obiekt[staryKlucz];
-                delete obiekt[staryKlucz];
+                obiekt[nowyKlucz] = obiekt[staryKlucz]
+                delete obiekt[staryKlucz]
             }
             return obiekt
         }
@@ -138,27 +138,96 @@
         }
         console.log(obiektTablica(czlowiek1))
 
-        var biggest = null // Zadanie 22 ----------------------- napraw to xdd
-        var liczby = {"pierwoj":1 , "dwaj":2 , "tres":3 , "quatro":69}
+        var liczby = {"pierwoj":1 , "dwaj":2 , "tres":3 , "quatro":69, "pjenc":5 } // Zadanie 22
         function najwiekszaWartosc (obiekt) {
+            var biggest = null
+            var biggestKey = null
             for(const property in obiekt) {
-                if (property > biggest) {
+                if (biggest === null || obiekt[property] > biggest) {
                     biggest = obiekt[property]
+                    biggestKey = property
                 }
             }   
-            return biggest
+            return biggestKey
         }
         console.log(najwiekszaWartosc(liczby))
 
-        function usunMniejszaWartosc(obiekt,wartosc) { // Zadanie 23
+        function usunMniejszaWartosc(obiekt, wartosc) { // Zadanie 23
             for(const property in obiekt) {
-                if (property < wartosc) {
+                if (obiekt[property] < wartosc) {
                     delete obiekt[property]
                 }
             }   
             return obiekt
         }
-        console.log(usunMniejszaWartosc(liczby,2))
+        console.log(usunMniejszaWartosc(liczby, 4))
+
+        function liczbaWlasciwosci(obiekt) { // Zadanie 24
+            return Object.keys(obiekt).length
+        }
+        console.log(liczbaWlasciwosci(liczby))
+
+        var obiekt = { a: { b: 1 } } // Zadanie 25
+        function zmienWartoscZagniezdzona(obiekt, sciezka, nowaWartosc) {
+            var aktualnyPoziom = obiekt
+            for(var i = 0; i < sciezka.length - 1; i++) {
+                aktualnyPoziom = aktualnyPoziom[sciezka[i]]
+            }
+            aktualnyPoziom[sciezka[sciezka.length - 1]] = nowaWartosc
+        }
+        zmienWartoscZagniezdzona(obiekt, ['a', 'b'], 2)
+        console.log(obiekt)
+
+        var obiekt = { a: "1", b: "2" } // Zadanie 26
+        function zamienKluczeIWartosci(obiekt) { 
+            var nowyObiekt = {}
+            for(var klucz in obiekt) {
+                nowyObiekt[obiekt[klucz]] = klucz
+            }
+            return nowyObiekt
+        }
+        console.log(zamienKluczeIWartosci(obiekt))
+
+        var obiekt = { a: "1", b: "2" } // Zadanie 27
+        function dodajWlasciwosc(obiekt, klucz, wartosc) {
+            if(!(klucz in obiekt)) {
+                obiekt[klucz] = wartosc
+            }
+        }
+        dodajWlasciwosc(obiekt, 'c', "3")
+        console.log(obiekt)
+        dodajWlasciwosc(obiekt, 'a', "4")
+        console.log(obiekt)
+
+        var tablica = [['a', 1], ['b', 2], ['c', 3]] // Zadanie 28
+        function tablicaDoObiektu(tablica) {
+            var obiekt = {}
+            for(var i = 0; i < tablica.length; i++) {
+                obiekt[tablica[i][0]] = tablica[i][1]
+            }
+            return obiekt
+        }
+        console.log(tablicaDoObiektu(tablica))
+
+        var obiekt = { a: "1", b: "2", c: "3" } // Zadanie 29
+        function czyWszystkieWartosciOkreslonegoTypu(obiekt, typ) {
+            for(var klucz in obiekt) {
+                if (typeof obiekt[klucz] !== typ) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        console.log(czyWszystkieWartosciOkreslonegoTypu(obiekt, 'string'))
+        obiekt = { a: "1", b: 2, c: "3" }
+        console.log(czyWszystkieWartosciOkreslonegoTypu(obiekt, 'string'))
+
+        var obiekt1 = { a: "1", b: "2" } // Zadanie 30
+        var obiekt2 = { b: "3", c: "4" }
+        function polaczObiekty(obiekt1, obiekt2) {
+            return {...obiekt1, ...obiekt2}
+        }
+        console.log(polaczObiekty(obiekt1, obiekt2))
     </script>
 </head>
 <body>
