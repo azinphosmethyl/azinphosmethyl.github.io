@@ -10,20 +10,29 @@
             age: "18",
             height: undefined
         }
+        console.log(czlowiek1)
 
         document.write(`${czlowiek1.name} </br>`) // Zadanie 2
 
         document.write(`${czlowiek1.name} ${czlowiek1.surname} <br>`) // Zadanie 3
 
-        czlowiek1.height = 192 // Zadanie 4
+        function nowaWlasciwosc (obiekt, Klucz, Wartosc) { // Zadanie 4
+            obiekt[Klucz] = Wartosc
+            return obiekt
+        }
+        nowaWlasciwosc(czlowiek1, "height", 192)
+        console.log(czlowiek1.height)
 
         for(const property in czlowiek1) { // Zadanie 5
             document.write(`${property}: ${czlowiek1[property]} <br>`)
         }
 
         delete czlowiek1.height // Zadanie 6
+        console.log(czlowiek1.height)
 
-        var czlowiek2 = { age: 9 , name: "eryk" }; var czlowiek3 = { age: 26 , name: "konrad" }; var czlowiek4 = { age: 163 , name: "szmitek" } // Zadanie 7
+        var czlowiek2 = { age: 9 , name: "eryk" } // Zadanie 7
+        var czlowiek3 = { age: 26 , name: "konrad" }
+        var czlowiek4 = { age: 163 , name: "szmitek" }
         var table = []; table[0] = czlowiek2; table[1] = czlowiek3; table[2] = czlowiek4
         var srednia = (table[0].age + table[1].age + table[2].age)/3
         document.write(`Srednia wieku dla wprowadzonych 3 osob to: ${srednia} lat <br>`)
@@ -44,8 +53,10 @@
                 moc: "260hp"
             }
         }
+        console.log(samochod)
 
         samochod.silnik.moc = "300hp" // Zadanie 10
+        console.log(samochod.silnik.moc)
 
         function Samochod(marka, model) { // Zadanie 11
             this.marka = marka
@@ -54,6 +65,7 @@
         Samochod.prototype = Object.create(Samochod.prototype)
         Samochod.prototype.constructor = Samochod
         var mojSamochod = new Samochod("audi", "a6c7")
+        console.log(mojSamochod)
 
         function Ksiazka(autor, tytul, rokWydania, wydawnictwo) { // Zadanie 12
             this.tytul = tytul
@@ -63,8 +75,7 @@
         }
         var mojaKsiazka = new Ksiazka("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin");
 
-        document.write(`Zadanie 13 ma sor w konsoli :) <br>`) // Zadanie 13
-        console.log(mojaKsiazka)
+        console.log(mojaKsiazka) // Zadanie 13
         
         function Ebook(tytul, autor, rokWydania, wydawnictwo, format, rozmiarPliku) {  // Zadanie 14
             Ksiazka.call(this, tytul, autor, rokWydania, wydawnictwo);
@@ -74,15 +85,80 @@
         Ebook.prototype = Object.create(Ksiazka.prototype)
         Ebook.prototype.constructor = Ebook
         var mojEbook = new Ebook("Władca Pierścieni", "J.R.R. Tolkien", 1954, "Allen & Unwin", "PDF", "5MB")
-        document.write(`Zadanie 14 ma sor w konsoli :)) <br>`)
         console.log(mojEbook)
 
-        if(Ebook.prototype == Ksiazka.prototype) { // Zadanie 15
+        if(mojEbook == mojaKsiazka) { // Zadanie 15
             document.write(`Prototypy Ebook i Ksiazka są takie same <br>`)
         }
         else {
             document.write(`Prototypy Ebook i Ksiazka nie są takie same <br>`)
         }
+
+        function kopiujObiekt(obiekt) { // Zadanie 16
+            return {...obiekt};
+        }
+        console.log(kopiujObiekt(mojEbook))
+
+        function sprawdzWlasciwosc(obiekt, wlasciwosc) { // Zadanie 17
+            return obiekt.hasOwnProperty(wlasciwosc);
+        }
+        console.log(sprawdzWlasciwosc(mojEbook, "tytul"))
+
+        var tablica = ["Pierwsze Miejsce","Drugie Miejsce","Trzecie Miejsce"] // Zadanie 18
+        function tablicowaFunkcja(tablica) {
+            var funkcja = {}
+            for (var i = 0; i < tablica.length; i++) {
+                funkcja[i] = tablica[i]
+            }
+            return funkcja
+        }
+        console.log(tablicowaFunkcja(tablica))
+
+        function zmianaKlucza(obiekt, staryKlucz, nowyKlucz) { // Zadanie 19
+            if (obiekt.hasOwnProperty(staryKlucz)) {
+                obiekt[nowyKlucz] = obiekt[staryKlucz];
+                delete obiekt[staryKlucz];
+            }
+            return obiekt
+        }
+        console.log(zmianaKlucza(czlowiek1,`name`,`imie`))
+
+        function usuwanieKlucza(obiekt,Klucz){ // Zadanie 20
+            delete obiekt[Klucz]
+            return obiekt
+        }
+        console.log(usuwanieKlucza(czlowiek1,`imie`))
+
+        var Zadanie21 = [] // Zadanie 21
+        function obiektTablica (obiekt) { 
+            for(const property in obiekt) {
+                Zadanie21[property] = obiekt[property]
+            }   
+            return Zadanie21
+        }
+        console.log(obiektTablica(czlowiek1))
+
+        var biggest = null // Zadanie 22 ----------------------- napraw to xdd
+        var liczby = {"pierwoj":1 , "dwaj":2 , "tres":3 , "quatro":69}
+        function najwiekszaWartosc (obiekt) {
+            for(const property in obiekt) {
+                if (property > biggest) {
+                    biggest = obiekt[property]
+                }
+            }   
+            return biggest
+        }
+        console.log(najwiekszaWartosc(liczby))
+
+        function usunMniejszaWartosc(obiekt,wartosc) { // Zadanie 23
+            for(const property in obiekt) {
+                if (property < wartosc) {
+                    delete obiekt[property]
+                }
+            }   
+            return obiekt
+        }
+        console.log(usunMniejszaWartosc(liczby,2))
     </script>
 </head>
 <body>
