@@ -23,7 +23,7 @@ body { /* Body of my site */
     background-color: black;
     position: fixed;
     width: 100vw;
-    height: 5vh;
+    height: 4vh;
     min-height: 30px;
 }
 .topbar ul {
@@ -47,8 +47,8 @@ body { /* Body of my site */
   color: #FFFFFF;
 }
 .topbar ul li:hover, .active {
-  transform:scale(1.25, 1.25);
-  background-color: #1A1B1A;
+  transform:scale(1.5, 1.5);
+  background-color: #3A3B3A;
 }
 
 
