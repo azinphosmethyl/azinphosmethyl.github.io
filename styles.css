@@ -9,6 +9,13 @@ body { /* Body of my site */
     padding: 0px;
     margin: 0px;
     overflow: initial;
+    position: relative;
+  }
+
+  body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
   }
  
 .topbar {
@@ -64,6 +71,10 @@ body { /* Body of my site */
   font-size: 0.75rem;
   font-weight: 100;
   text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .site h1 a {
   margin: -20px 300px;
@@ -71,7 +82,77 @@ body { /* Body of my site */
   text-decoration: none;
   color: white;
 }
+.site img {
+  border-radius: 3vh;
+  width: 50%;
+  height: auto;
+}
 
+
+.info-site {
+  font-family: 'Dhurjati', sans-serif;
+  margin: auto;
+  border-radius: 3vh;
+  width: 98vw;
+  background-image: linear-gradient(125deg, #040305, #040305);
+  font-size: 0.75rem;
+  font-weight: 100;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: start;
+}
+.info-site h1 a {
+  margin: -20px 300px;
+  padding: 0 0;
+  text-decoration: none;
+  color: white;
+}
+.info-site img {
+  border-radius: 3vh;
+  width: 50%;
+  height: auto;
+  margin-bottom: 50px;
+}
+
+#stopka {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 70px; 
+  background-color: black;
+  color: white;
+  padding: 10px 0;
+}
+#stopka strong {
+  animation: kolor 1s infinite;
+}
+#stopka img {
+  width: 70px;
+  height: auto;
+}
+
+.kolorowy-link {
+  display: inline-block;
+  transition: transform 0.1s ease-in-out;
+}
+
+.kolorowy-link:hover {
+  transform: scale(2);
+  color: red;
+  animation: kolor 0.2s infinite;
+}
+
+@keyframes kolor {
+  0% { color: white; }
+  50% { color: grey; }
+  100% { color: black; }
+}
 
 
 
