@@ -23,7 +23,7 @@ body { /* Body of my site */
     background-color: black;
     position: fixed;
     width: 100vw;
-    height: 4vh;
+    height: 5vh;
     min-height: 30px;
 }
 .topbar ul {

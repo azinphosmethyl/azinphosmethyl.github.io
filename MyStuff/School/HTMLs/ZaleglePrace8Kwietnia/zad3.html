@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Zaokrąglanie liczby</title>
+    <script>
+        function roundNumber() {
+            var number = prompt("Podaj liczbę dziesiętną:");
+            var roundedNumber = Math.round(number);
+            document.getElementById("result").innerHTML = "Zaokrąglona liczba: " + roundedNumber;
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <button onclick="roundNumber()">Zaokrąglaj liczbę</button>
+    <p id="result"></p>
+    </center>
+</body>
+</html>

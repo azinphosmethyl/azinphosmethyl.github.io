@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>siemanero</title>
+    <style>
+        table, th, td {
+            padding: 50px;
+            border: 5px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <table>
+            <tr>
+                <th>a) <button onclick="untillX()">A</button></th>
+                <th>b) <button onclick="sortTen()">B</button></th>
+            </tr>
+            <tr>
+                <td>c) <button onclick="untilRepeat()">C</button></td>
+                <td>d) <button onclick="massIncrease()">D</button></td>
+            </tr>
+        </table>
+    </center>
+    <script>
+        function untillX() {
+            var variable
+            var table = []
+            while (true) {
+                if (variable == "X" || variable == "x") {
+                    break;
+                }
+                else{
+                    variable = prompt("Zgadnij: ");
+                    table.push(variable);
+                }
+                
+            }
+            
+            alert(`Gratuluje zgadles! Oto twoje proby: ${table}`);
+        }
+        function sortTen() {
+            var table = []
+            for (var i = 0; i < 10; i++) {
+                table.push(prompt("Podaj liczbe: "));
+            }
+            table.sort((a, b) => a - b);
+            alert(`Posortowane liczby: ${table}`);
+        }
+        function untilRepeat() {
+            var table = []
+            for (var i = 0; i < 10; i++) {
+                var variable = prompt("Podaj liczbe: ");
+                if (table[i-1]==variable) {
+                    break;
+                }
+                table.push(variable);
+            }
+            alert(`Dwa razy pod rzad podales ta sama liczbe!!! A bylo to: ${variable}`);
+        }
+        function massIncrease() {
+            var mass = [1, 1];
+            for (var i = 2; i < 10; i++) {
+                mass[i] = mass[i-1] + mass[i-2];
+            }
+            for (var i = 0; i < 10; i++) {
+                alert(`Po okrążeniu numer ${i+1}, masa Kapitana Lufy wynosi: ${mass[i]}kg`);
+            }
+    }
+    </script>
+</body>
+</html>
