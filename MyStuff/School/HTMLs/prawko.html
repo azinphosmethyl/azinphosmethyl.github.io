@@ -63,14 +63,14 @@
         }
     </style>
 </head>
-<body>
+<body onload="document.getElementById('question').innerText = questions[currentQuestionIndex].text;">
     <h1><strong>Test na prawo jazdy</strong></h1>
-    <img src="https://www.teoria.pl/zasoby/ministerstwo/v4/W11_suwak_305.jpg" alt="Driving Test Image">
+    <img id="questionImage" src="initial-image-url" alt="Driving Test Image">
     <br>
-    <h3>Czy kierujący ma obowiązek stosować tzw. "jazdę na suwak", gdy nie ma znacznego zmniejszenia prędkości ?</h3>    
+    <h3 id="question"></h3>    
     <br>
-    <button onclick="checkAnswer(true); showImage2()">Tak</button>
-    <button onclick="checkAnswer(false); showImage()">Nie</button>
+    <button onclick="checkAnswer(true)">Tak</button>
+    <button onclick="checkAnswer(false)">Nie</button>
 
     <p id="result"></p>
 
@@ -81,20 +81,53 @@
         <p style="margin-right: 20px; font-size: 20px; " id="data"></p>
     </div>
 
+    <!--
     <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F3810471.jpg&f=1&nofb=1&ipt=b60fb5e1a399c281b0a564247319881dc3c53b9b0c9f9cb9ff6493bc78a0909a&ipo=images') no-repeat center center fixed; background-size: cover;"></div>
     <div id="overlay2" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Facegif.com%2Fwp-content%2Fgif%2Fconfetti-40.gif&f=1&nofb=1&ipt=9df1ddf332efeff0bc48749fb8590267250cd1946969fba274966203976d08a8&ipo=images') no-repeat center center fixed; background-size: cover;"></div>
+    -->
 
     <script>
-        function checkAnswer(answer) {
-            if (answer) {
-                document.getElementById("result").innerHTML = "Gratulacje! Zdales!";
-            } else {
-                document.getElementById("result").innerHTML = "Niestety nie zdales :( Pozegnaj sie z komputerem";
-            }
+        var questions = [
+        { text: 'Czy w przedstawionej sytuacji odległość od znaku ostrzegawczego do miejsca niebezpiecznego wynosi do 100 metrów?', correctAnswer: true, image: 'https://app.zdamyto.com/files/pt/00044/0004435_e38df93d324f196596.jpg', points: 2 },
+        { text: 'Czy w tej sytuacji jesteś informowany, że poruszasz się drogą jednokierunkową?', correctAnswer: false, image: '', points: 3 },
+        { text: 'Czy w tej sytuacji jesteś informowany o zbliżaniu się do punktu poboru opłat za przejazd autostradą?', correctAnswer: true, image: '', points: 1 },
+        { text: 'Czy w tej sytuacji należy zatrzymać się przed widoczną linią bezwzględnego zatrzymania - stop?', correctAnswer: false, image: '', points: 1 },
+        { text: 'Czy w tej sytuacji migający sygnał świetlny zakazuje Ci wjazdu na przejazd tramwajowy?', correctAnswer: true, image: '', points: 3 },
+        { text: 'Zamierzasz jechać na wprost. Czy masz obowiązek ustąpić pierwszeństwa pojazdowi nadjeżdżającemu z prawej strony?', correctAnswer: false, image: '', points: 3 },
+        { text: 'Czy w widocznej sytuacji zbliżasz się do drogi z pierwszeństwem?', correctAnswer: true, image: '', points: 3 },
+        { text: 'Czy możesz przejechać przed pojazdem szynowym?', correctAnswer: false, image: '', points: 3 },
+        { text: 'Czy taka postawa policjanta oznacza, że masz prawo skręcić w prawo?', correctAnswer: true, image: '', points: 3 },
+        { text: 'Czy chcąc wysadzić pasażera, masz prawo zatrzymać pojazd na jezdni w miejscu, w którym się teraz znajdujesz?', correctAnswer: true, image: '', points: 2 },
+        { text: 'Czy zmieniając nieznacznie tor jazdy pojazdu w obrębie dotychczas zajmowanego pasa ruchu, masz obowiązek sygnalizować to wcześniej kierunkowskazem?', correctAnswer: false, image: 'https://app.zdamyto.com/files/pt/00045/0004586_e39f3a3d324f196596.jpg', points: 2 },
+        { text: 'Czy w tej sytuacji masz prawo kontynuować wyprzedzanie?', correctAnswer: true, image: '', points: 3 },
+        { text: 'Czy podczas manewru wymijania należy zawsze zachować szczególną ostrożność?', correctAnswer: false, image: '', points: 2 },
+        { text: 'Czy w czasie jazdy w warunkach zmniejszonej przejrzystości powietrza spowodowanych mgłą w pojeździe silnikowym mogą być włączone tylko światła przeciwmgłowe przednie?', correctAnswer: true, image: 'https://app.zdamyto.com/files/pt/00064/0006449_eb8e3d3d324f196596.jpg', points: 1 },
+        { text: 'Czy w tej sytuacji masz obowiązek zachować szczególną ostrożność?', correctAnswer: false, image: '', points: 2 },
+        { text: 'Czy w tej sytuacji masz obowiązek ustąpić pierwszeństwa pieszemu, który zamierza wejść na jezdnię?', correctAnswer: true, image: '', points: 3 },
+        { text: 'Question 17', correctAnswer: false, image: 'image-url-17', points: 2 },
+        { text: 'Question 18', correctAnswer: true, image: 'image-url-18', points: 1 },
+        { text: 'Question 19', correctAnswer: false, image: 'image-url-19', points: 3 },
+        { text: 'Question 20', correctAnswer: true, image: 'image-url-20', points: 2 },
+        { text: 'Question 21', correctAnswer: false, image: 'image-url-21', points: 1 },
+        { text: 'Question 22', correctAnswer: true, image: 'image-url-22', points: 3 },
+        { text: 'Question 23', correctAnswer: false, image: 'image-url-23', points: 2 },
+        { text: 'Question 24', correctAnswer: false, image: 'image-url-10', points: 3 }
+    ];
+    var currentQuestionIndex = 0;
+    var score = 0;
+
+    function checkAnswer(answer) {
+        if (answer === questions[currentQuestionIndex].correctAnswer) {
+            score += questions[currentQuestionIndex].points;
         }
-        function aktualizujDate() {
-            document.getElementById('data').innerText = new Date().toLocaleString();
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            document.getElementById('question').innerText = questions[currentQuestionIndex].text;
+            document.getElementById('questionImage').src = questions[currentQuestionIndex].image;
+        } else {
+            document.getElementById('result').innerText = 'Your score: ' + score;
         }
+    }
         setInterval(aktualizujDate, 1000);
         document.addEventListener('visibilitychange', function() {
             if (document.hidden) {
