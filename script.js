@@ -20,7 +20,14 @@ window.onload = function() {
         });
     });
 };
-function aktualizujDate() {
-    document.getElementById('data').innerText = new Date().toLocaleString();
-  }
-  setInterval(aktualizujDate, 1000);
+function updateClock() {
+    const dataElement = document.getElementById('data');
+    const now = new Date();
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    dataElement.textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+setInterval(updateClock, 1000);
+updateClock(); // Initial call to display the clock immediately
