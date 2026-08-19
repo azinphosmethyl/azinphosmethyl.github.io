@@ -1,0 +1,134 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bombki</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background-color: wheat;
+        }
+        #top {
+            flex-grow: 1;
+            text-align: center;
+            font-family: 'Dhurjati', sans-serif;
+            font-size: 2rem;
+            color: firebrick;
+            text-shadow: 0px 0px 25px hotpink;
+            margin-top: 24px;
+        }
+        #container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        height: 100%;
+    }
+        #left, #right {
+            margin-top: 69px;
+            text-align: center;
+            margin: 50px;
+        }
+        img {
+            border-radius: 15px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 25px white;
+            width: 100px;
+            height: 100px;  
+        }
+        select {
+            font-size: 1.5rem;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 25px white;
+            background-color: salmon;
+            margin-bottom: 50px;
+        }
+        label {
+            font-size: 1rem;
+            padding: 10px;
+            margin: 30px;
+            border-radius: 15px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 25px white;
+            background-color: salmon;
+            margin-bottom: 50px;
+        }
+        input {
+            font-size: 1rem;
+            background-color: salmon;
+            margin-bottom: 50px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px;
+            border-radius: 15px;
+            border: 2px solid black;
+            box-shadow: 0px 0px 25px white;
+            background-color: salmon;
+            margin-bottom: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+        Hurtownia Bombek Duze Kule
+    </div>
+    <div id="container">
+        <div id="left">
+            <h2>Zestaw I</h2>
+            <table>
+                <tr>
+                    <th><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.KGHrRaKjxb-8s1IKMxbsZQHaHa%26pid%3DApi&f=1&ipt=4c96add661d0e487f80f3085fc09180680de78f4db722ab77263070caeb177bb&ipo=images" alt="bombka"></th>
+                    <th><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.JiCL50gheeWKSD0znu7DFwHaHa%26pid%3DApi&f=1&ipt=7ba057fe098997fe210580aafb0c66dd4d23c28803718e89a3f5a9b1ce8c2139&ipo=images" alt="bombla"></th>
+                    <th><img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.QREOIMCxcD4nSNXmpFCfPAHaHa%26pid%3DApi&f=1&ipt=7a30429364b64dfd698927d75d1ad01de4fe36a1e898976ab549e17d88ed8635&ipo=images" alt="bombka"></th>
+                </tr>
+            </table>
+            <h2>Zestaw II</h2>
+            <table>
+                <tr>
+                    <th><img src="https://bombeczka.pl/userdata/public/gfx/2052/zlota-sprezynka-na-zielonym-8-cm.jpg" alt="bombka"></th>
+                    <th><img src="https://bombeczka.pl/userdata/public/gfx/2046/zlota-sprezynka-na-niebieskim-8-cm.jpg" alt="bombka"></th>
+                    <th><img src="https://bombeczka.pl/userdata/public/gfx/2054/srebrna-sprezynka-na-fioletowym-8-cm.jpg" alt="bombka"></th>
+                </tr>
+            </table>
+            <h2>Zestaw III</h2>
+            <table>
+                <tr>
+                    <th><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV7lkkaiG7Dwpy6L7Tai4tj-P81IDm3fV8tCuJwFqnmw&s" alt="bombka"></th>
+                    <th><img src="https://sportservice.pl/pol_pl_Bombki-choinkowe-30-szt-ozdoby-swiateczne-zestaw-6cm-granatowy-zloty-31805_11.jpg" alt="bombka"></th>
+                    <th><img src="https://bombeczka.pl/environment/cache/images/300_300_productGfx_691/zlote-serpentyny-na-zlotym-10cm.jpg" alt="bombka"></th>
+                </tr>
+            </table>
+        </div>
+        <div id="right">
+            <h1 style="color: brown"><strong>Skompletuj zestaw:</strong></h1>
+            <select id="referrer">
+                <option value="">(wybierz zestaw)</option>
+                <option value="20">Zestaw I / 20zl</option>
+                <option value="30">Zestaw II / 30zl</option>
+                <option value="55">Zestaw III / 55zl</option>
+              </select>
+              <br>
+              <label id="count">Ilosc pudelek: <input id="number" type="number" min="1" max="100" placeholder="1-100" /></label>
+              <br>
+              <input id="info" type="checkbox" class="inline" /> Prosze infromowac mnie o ewentualnych promocjach
+              <br>
+              <button id="calculate">Oblicz cene!</button>
+              <br>
+              <p id="result"></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('calculate').addEventListener('click', function() {
+            var referrerValue = document.getElementById('referrer').value;
+            var countValue = document.getElementById('number').value;
+            var result = referrerValue * countValue;
+            document.getElementById('result').innerText = 'Za swoje zamowienie zaplacisz: ' + result + `zl! Zamowiles ${countValue} pudelek bombek!`;
+        });
+    </script>
+</body>
+</html>

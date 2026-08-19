@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Obliczanie pierwiastka kwadratowego</title>
+    <script>
+        function obliczPierwiastek() {
+            var liczba = prompt("Podaj liczbę:");
+            var pierwiastek = Math.sqrt(parseFloat(liczba));
+            document.getElementById("wynik").innerHTML = "Pierwiastek kwadratowy z " + liczba + " wynosi: " + pierwiastek;
+        }
+    </script>
+</head>
+<body>
+<center>
+    <button onclick="obliczPierwiastek()">Oblicz pierwiastek</button>
+    <p id="wynik"></p>
+</center>
+</body>
+</html>

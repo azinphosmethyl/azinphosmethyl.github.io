@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prawo Jazdy</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: white;
+            color: black;
+            margin: 0;
+        }
+        img {
+            width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        button {
+            background-color: #DDAA00;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 10px;
+        }
+        #stopka {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 24px; 
+            background-color: black;
+            color: white;
+            padding: 10px 0;
+        }
+        @keyframes kolor {
+        0% { color: red; }
+        14% { color: orange; }
+        28% { color: yellow; }
+        42% { color: green; }
+        57% { color: blue; }
+        71% { color: indigo; }
+        85% { color: violet; }
+        100% { color: red; }
+        }
+        @keyframes kolor2 {
+            0% { color: white; }
+            50% { color: grey; }
+            100% { color: black; }
+        }
+        h1 strong {
+            animation: kolor 7s infinite;
+        }
+        strong{
+            animation: kolor2 1s infinite;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong>Test na prawo jazdy</strong></h1>
+    <img src="https://www.teoria.pl/zasoby/ministerstwo/v4/W11_suwak_305.jpg" alt="Driving Test Image">
+    <br>
+    <h3>Czy kierujący ma obowiązek stosować tzw. "jazdę na suwak", gdy nie ma znacznego zmniejszenia prędkości ?</h3>    
+    <br>
+    <button onclick="checkAnswer(true); showImage2()">Tak</button>
+    <button onclick="checkAnswer(false); showImage()">Nie</button>
+
+    <p id="result"></p>
+
+    <br>
+
+    <div id="stopka">
+        <p>by <strong>Michal Kuszneruk</strong></p>
+        <p style="margin-right: 20px; font-size: 20px; " id="data"></p>
+    </div>
+
+    <div id="overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F3810471.jpg&f=1&nofb=1&ipt=b60fb5e1a399c281b0a564247319881dc3c53b9b0c9f9cb9ff6493bc78a0909a&ipo=images') no-repeat center center fixed; background-size: cover;"></div>
+    <div id="overlay2" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi0.wp.com%2Facegif.com%2Fwp-content%2Fgif%2Fconfetti-40.gif&f=1&nofb=1&ipt=9df1ddf332efeff0bc48749fb8590267250cd1946969fba274966203976d08a8&ipo=images') no-repeat center center fixed; background-size: cover;"></div>
+
+    <script>
+        function checkAnswer(answer) {
+            if (answer) {
+                document.getElementById("result").innerHTML = "Gratulacje! Zdales!";
+            } else {
+                document.getElementById("result").innerHTML = "Niestety nie zdales :( Pozegnaj sie z komputerem";
+            }
+        }
+        function aktualizujDate() {
+            document.getElementById('data').innerText = new Date().toLocaleString();
+        }
+        setInterval(aktualizujDate, 1000);
+        document.addEventListener('visibilitychange', function() {
+            if (document.hidden) {
+                document.title = ":(((";
+            } else {
+                document.title = ":)))";
+            }
+        });
+        function showImage() {
+        setTimeout(function() {
+            document.getElementById('overlay').style.display = 'block';
+        }, 3000);
+        }
+        function showImage2() {
+        setTimeout(function() {
+            document.getElementById('overlay2').style.display = 'block';
+        }, 0);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Planets</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        .planet-info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        img {
+            width: 100px;
+            height: 100px;
+            padding-bottom: 25px;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Planets</h1>
+    <div>
+        <img src="https://astropolis.pl/uploads/post-905-0-28420300-1397136193.jpg" alt="Mercury" onmouseover="showPlanetInfo('Mercury', 'Size: Small, Gravity: 3.7 m/s², Weight: 0.055 Earths, Distance from the Sun: 57.91 million km, Radius: 2,439.7 km, Day Length: 4222.6 hours')">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/8/85/Venus_globe.jpg" alt="Venus" onmouseover="showPlanetInfo('Venus', 'Size: Similar to Earth, Gravity: 8.87 m/s², Weight: 0.815 Earths, Distance from the Sun: 108.2 million km, Radius: 6,051.8 km, Day Length: 2802 hours')">
+        <img src="https://cdn.thinglink.me/api/image/764240960296058881/1024/10/scaletowidth/0/0/1/1/false/true?wait=true" alt="Earth" onmouseover="showPlanetInfo('Earth', 'Size: Largest terrestrial planet, Gravity: 9.807 m/s², Weight: 1 Earth, Distance from the Sun: 149.6 million km, Radius: 6,371 km, Day Length: 24 hours')">
+        <img src="https://mars.jpl.nasa.gov/odyssey/images/Icy_Mars.jpg" alt="Mars" onmouseover="showPlanetInfo('Mars', 'Size: Half the size of Earth, Gravity: 3.72076 m/s², Weight: 0.107 Earths, Distance from the Sun: 227.9 million km, Radius: 3,389.5 km, Day Length: 24.6 hours')">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/5/5a/Jupiter_by_Cassini-Huygens.jpg" alt="Jupiter" onmouseover="showPlanetInfo('Jupiter', 'Size: Largest planet, Gravity: 24.79 m/s², Weight: 317.8 Earths, Distance from the Sun: 778.5 million km, Radius: 69,911 km, Day Length: 9.9 hours')">
+        <img src="https://i.redd.it/4j2p03ccde8z.png" alt="Saturn" onmouseover="showPlanetInfo('Saturn', 'Size: Second largest planet, Gravity: 10.44 m/s², Weight: 95.162 Earths, Distance from the Sun: 1.429 billion km, Radius: 58,232 km, Day Length: 10.7 hours')">
+        <img src="https://solarstory.net/img/articles/big/planet-uranus-by-voyager-2-in-1986.jpg" alt="Uranus" onmouseover="showPlanetInfo('Uranus', 'Size: Third largest planet, Gravity: 8.87 m/s², Weight: 14.536 Earths, Distance from the Sun: 2.871 billion km, Radius: 25,362 km, Day Length: 17.2 hours')">
+        <img src="http://upload.wikimedia.org/wikipedia/commons/0/06/Neptune.jpg" alt="Neptune" onmouseover="showPlanetInfo('Neptune', 'Size: Fourth largest planet, Gravity: 11.15 m/s², Weight: 17.147 Earths, Distance from the Sun: 4.498 billion km, Radius: 24,622 km, Day Length: 16.1 hours')">
+    </div>
+<div style="height: 10px; width: 97.5vw; background-color: red; padding: 10px"></div>
+    <div id="planet-info" class="planet-info" style="text-align: center;"></div>
+
+    <script>
+        function showPlanetInfo(name, data) {
+            var planetInfo = document.getElementById('planet-info');
+            planetInfo.innerHTML = '<h2 style="text-align: center;">' + name + '</h2><p style="text-align: center;">' + data + '</p>';
+            planetInfo.style.display = 'block';
+        }
+    </script>
+</body>
+</html>

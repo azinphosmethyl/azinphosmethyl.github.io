@@ -1,0 +1,74 @@
+body {
+    background-image: url(https://wallpapercave.com/wp/wp6056707.jpg);
+    font-family: Tahoma;
+    font-size: 1.5rem;
+    color: white;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+  }
+  
+  .site {
+    width: 80%;
+    height: 200%;
+     background-color: rgba(27,0,68,0.90);
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0px;
+      margin-top: 30px;
+      padding: 30px;
+      max-width: 500px;
+      border-radius: 15px;
+      text-align: center;
+  }
+  
+  
+  #title {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    text-align: center;
+    text-shadow: 5px 5px 10px rgba(0,0,0,1);
+  }
+  
+  #description {
+    font-size: 0.75rem;
+    text-align: center;
+    text-shadow: 3px 3px 5px rgba(27,0,68,1);
+    color: black;
+  }
+  
+  fieldset {
+      border: none;
+      padding: 1rem 0.25rem;
+      border-bottom: 3px solid #3b3b4f;
+    }
+  
+  label {
+      display: block;
+      margin: 0.5rem 0;
+    }
+  
+  small {
+      font-size: 0.75rem;
+    }
+  
+  input, select {
+    width: 100%;
+  }
+  
+  input, textarea, select {
+      background-color: #0a0a23;
+      border: 1px solid #0a0a23;
+      color: #ffffff;
+    }
+  
+  .input-checkbox {
+    display: inline-block;
+    margin-right: 0.625rem;
+    min-width: 1rem;
+    min-height: 1rem;
+  
+  }

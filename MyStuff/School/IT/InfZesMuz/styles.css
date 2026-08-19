@@ -1,0 +1,173 @@
+body {
+  background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpaper.dog%2Flarge%2F5486197.jpg&f=1&nofb=1&ipt=45aa4616974d14e9fe7855866e1a8aeb9666374485c2bfd6a61e4c7a2579ffb4&ipo=images);
+  font-family: Tahoma;
+  font-size: 1.5rem;
+  color: white;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-color: black;
+}
+
+.site {
+  width: 80%;
+  height: 200%;
+   background-color: rgba(0,0,0,0.95);
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    padding: 30px;
+    max-width: 1024px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+
+#title {
+  text-align: center;
+  padding-top: 50px;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+  text-shadow: 5px 5px 10px rgba(0,0,0,1);
+}
+
+#description {
+  font-size: 0.75rem;
+  text-align: center;
+  text-shadow: 3px 3px 5px rgba(155,155,155,1);
+  color: black;
+}
+
+fieldset {
+    border: none;
+    padding: 1rem 0.25rem;
+    border-bottom: 3px solid #3b3b4f;
+  }
+
+.top-bar {
+  text-align: center;
+  background-color: black;
+  padding: 0px;
+  margin-top: -32px;
+  position: fixed;
+  width: 100vw;
+  height: 6vh;
+  left: 0px;
+  z-index: 1;
+  max-height: 100px;
+}
+
+.top-bar u1 {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.top-bar u1 a {
+  text-decoration: none;
+  color: #fff;
+}
+.top-bar u1 a li, button, .dropdown {
+  font-size: 5vh;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  margin: 0 0vw;
+  height: 6vh;
+  width: 15vw;
+  transition: all .2s ease-in-out;
+}
+.top-bar u1 li:hover {
+  color: black;
+  background-color: #fff;
+  transform:scale(1.25, 1.25);
+}
+.top-bar u1 li:hover a {
+  text-decoration: none;
+  color: black;
+}
+
+h5 a {
+color: red;
+text-decoration: none;
+}
+h5 a:hover {
+  color: gray;
+  text-shadow: 0 0 20px white;
+  transition: all .15s ease-in-out;
+}
+
+
+audio { 
+  display: inline-block;
+  vertical-align: middle;
+  width: 115px;
+  height: 25px;
+  margin-top: -45px;
+}
+.songname {
+  display: inline-block;
+  vertical-align: middle;
+  color: white;
+  font-size: small;
+  margin-top: -25px;
+}
+h4 {
+  margin-top: -10px;
+  margin-bottom: -30px;
+}
+
+audio::-webkit-media-controls-panel {
+  -webkit-justify-content: center;
+  height: 25px;
+}
+
+audio::-webkit-media-controls-timeline {
+  display: none !important;
+}
+audio::-webkit-media-controls-current-time-display {
+  display: none;
+}
+audio::-webkit-media-controls-time-remaining-display {
+  display: none;
+}
+audio::-webkit-media-controls-mute-button {
+  display: none;
+}
+
+.homeimg {
+  width: 60vw;
+  height: auto;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: 0 0 20px white;
+  transition: all .2s ease-in-out;
+  margin-bottom: 100px;
+  max-width: 1000px;
+}
+.homeimg:hover {
+  transform:scale(1.05, 1.05);
+  box-shadow: 0 0 75px white;
+ }
+
+.artistsimgs {
+  width: 30vw;
+  height: auto;
+  border-radius: 50px;
+  border: 1px solid black;
+  box-shadow: 0 0 15px black;
+  transform:scale(0.95, 0.95);
+  transition: all .4s ease-in-out;
+  max-width: 512px;
+}
+
+.artistsimgs:hover {
+  transform:scale(1.15, 1.15);
+  box-shadow: 0 0 25px white;
+}
+ h6 {
+  color: gray;
+ }

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sprawdź czy liczba jest doskonała</title>
+    <script>
+        function checkPerfectNumber() {
+            var number = parseInt(document.getElementById("numberInput").value);
+            var sum = 0;
+            for (var i = 1; i < number; i++) {
+                if (number % i === 0) {
+                    sum += i;
+                }
+            }
+            var result = document.getElementById("result");
+            if (sum === number) {
+                result.innerHTML = "Liczba " + number + " jest doskonała!";
+            } else {
+                result.innerHTML = "Liczba " + number + " nie jest doskonała.";
+            }
+        }
+    </script>
+</head>
+<body>
+    <center>
+    <h1>Sprawdź czy liczba jest doskonała</h1>
+    <form onsubmit="event.preventDefault(); checkPerfectNumber();">
+        <label for="numberInput">Podaj liczbę:</label>
+        <input type="number" id="numberInput" required>
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div id="result"></div>
+    </center>
+</body>
+</html>
